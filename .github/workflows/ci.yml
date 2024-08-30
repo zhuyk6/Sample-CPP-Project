@@ -9,9 +9,17 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Setup GCC
+      uses: egor-tensin/setup-gcc@v1
+      with:
+        version: 14.2
+        platform: x64
+
+    - name: Check GCC version
+      run: gcc --version
+
     - name: Install dependencies
       run: |
-        sudo apt-get update
         sudo apt-get install -y build-essential cmake
     
     - name: Setup vcpkg
