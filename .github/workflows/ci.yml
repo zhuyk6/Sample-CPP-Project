@@ -9,12 +9,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup GCC
-      uses: egor-tensin/setup-gcc@v1
-      with:
-        version: 14.2
-        platform: x64
-
     - name: Check GCC version
       run: gcc --version
 
